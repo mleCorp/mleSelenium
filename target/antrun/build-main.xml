@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <zip destfile="/workspaces/mleSelenium/target/app.zip">
+      <zipfileset dir="/workspaces/mleSelenium/target/docker" />
+      <zipfileset includes="mle-se.jar" dir="/workspaces/mleSelenium/target" />
+    </zip>
+  </target>
+</project>
