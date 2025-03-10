@@ -17,6 +17,7 @@ public class GoogleTest {
 
         // Add Headless Mode for GitHub Actions
         ChromeOptions options = new ChromeOptions();
+        options.setBinary("/usr/bin/google-chrome"); // Force Chrome binary path
         options.addArguments("--headless");  
         options.addArguments("--no-sandbox"); 
         options.addArguments("--disable-dev-shm-usage"); 
