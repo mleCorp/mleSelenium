@@ -20,10 +20,11 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Install Chrome
+      - name: Install Latest Chrome
         run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -fy install
+          google-chrome --version
 
       - name: Verify Chrome Installation
         run: |
@@ -46,7 +47,4 @@ jobs:
       - name: Clean Package Cache (if needed)
         run: sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/*
       
-      - name: Upgrade Chrome to v134
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+

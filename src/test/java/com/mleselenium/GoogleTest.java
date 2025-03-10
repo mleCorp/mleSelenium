@@ -12,7 +12,8 @@ public class GoogleTest {
 
     @Test
     public void testGoogleTitle() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().driverVersion("133.0.6943.141").setup();
+        WebDriver driver = new ChromeDriver();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");        // Essential for CI/CD (No UI)
