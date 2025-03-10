@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class GoogleTest {
+public class GoogleMLETest {
 
     @Test
     public void sampleTest() {
