@@ -11,16 +11,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GoogleTest {
 
     @Test
-    public void GoogleTest() {
-        // Setup ChromeDriver
+    public void testGooglePageTitle() {  // Renamed method for clarity
+        // Setup ChromeDriver with specific version
         WebDriverManager.chromedriver().driverVersion("134.0.6998.35").setup();
-        WebDriverManager.chromedriver().setup();
 
         // Add Headless Mode for GitHub Actions
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");  // Important for CI/CD environments
-        options.addArguments("--no-sandbox"); // Recommended for GitHub Actions
-        options.addArguments("--disable-dev-shm-usage"); // Prevent memory issues
+        options.addArguments("--headless");  
+        options.addArguments("--no-sandbox"); 
+        options.addArguments("--disable-dev-shm-usage"); 
 
         WebDriver driver = new ChromeDriver(options);
 
