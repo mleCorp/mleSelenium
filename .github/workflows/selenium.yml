@@ -45,3 +45,8 @@ jobs:
       
       - name: Clean Package Cache (if needed)
         run: sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/*
+      
+      - name: Upgrade Chrome to v134
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
