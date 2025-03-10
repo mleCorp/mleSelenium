@@ -166,7 +166,7 @@
                 <version>3.1.2</version>  <!-- Latest version recommended for JUnit 5 -->
                 <configuration>
                     <includes>
-                        <include>**/SampleTest.java</include>
+                        <include>**/*Test.java</include>
                     </includes>
                 </configuration>
             </plugin>
