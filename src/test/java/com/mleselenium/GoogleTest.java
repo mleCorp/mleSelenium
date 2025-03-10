@@ -1,31 +1,36 @@
 package com.mleselenium;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class GoogleTest {
 
     @Test
-    public void testGoogleTitle() {
-        WebDriverManager.chromedriver().driverVersion("133.0.6943.141").setup();
-        WebDriver driver = new ChromeDriver();
+    public void GoogleTest() {
+        // Setup ChromeDriver
+        WebDriverManager.chromedriver().driverVersion("134.0.6998.35").setup();
+        WebDriverManager.chromedriver().setup();
 
+        // Add Headless Mode for GitHub Actions
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");        // Essential for CI/CD (No UI)
-        options.addArguments("--no-sandbox");      // Prevents permission issues
-        options.addArguments("--disable-dev-shm-usage");  // Prevents memory issues
-        options.addArguments("--remote-allow-origins=*"); // Solves Chrome security issues
+        options.addArguments("--headless");  // Important for CI/CD environments
+        options.addArguments("--no-sandbox"); // Recommended for GitHub Actions
+        options.addArguments("--disable-dev-shm-usage"); // Prevent memory issues
 
         WebDriver driver = new ChromeDriver(options);
 
+        // Navigate to Google
         driver.get("https://www.google.com");
+
+        // Verify page title
         assertEquals("Google", driver.getTitle());
 
+        // Close the browser
         driver.quit();
     }
 }
