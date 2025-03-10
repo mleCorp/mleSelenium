@@ -15,10 +15,11 @@ public class GoogleTest {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // Required for GitHub Actions
-        options.addArguments("--no-sandbox"); // Recommended for CI environments
-        options.addArguments("--disable-dev-shm-usage"); // Prevents resource issues in CI
-        
+        options.addArguments("--headless");        // Essential for CI/CD (No UI)
+        options.addArguments("--no-sandbox");      // Prevents permission issues
+        options.addArguments("--disable-dev-shm-usage");  // Prevents memory issues
+        options.addArguments("--remote-allow-origins=*"); // Solves Chrome security issues
+
         WebDriver driver = new ChromeDriver(options);
 
         driver.get("https://www.google.com");
