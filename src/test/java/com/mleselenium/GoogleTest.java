@@ -1,10 +1,10 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class SampleTest {
+public class GoogleTest {
 
     @Test
-    public void sampleTestMethod() {
-        assertTrue(true, "This test should pass");
+    public void sampleTest() {
+        assertTrue(true); // Sample assertion
     }
 }
