@@ -1,10 +1,12 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+package com.mleselenium;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class GoogleMLETest {
 
-    @Test
-    public void sampleTest() {
-        assertTrue(true); // Sample assertion
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.google.com/");
     }
 }
